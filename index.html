@@ -36,6 +36,7 @@
                     <div class="col-md-6">
                         <div style="text-align: center;">
                             <h6>Đếm chữ cái</h6>
+                            <p id="total1"></p>
                             <p id="KetQua1"></p>
                         </div>
                         
@@ -43,6 +44,7 @@
                     <div class="col-md-6">
                         <div style="text-align: center;">
                             <h6>Các cặp trùng</h6>
+                            <p id="total2"></p>
                             <p  id="KetQua2"></p>
                         </div>
                         
@@ -78,7 +80,8 @@
             var text1 = textArea.value;
             var arrayText1 = Array.from(text1);
             var listAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-
+            var totalAlpha = 0;
+            var totalCouple = 0;
             listAlpha.forEach(x => {
                 var temp = 0;
                 arrayText1.forEach(text => {
@@ -86,7 +89,12 @@
                         temp++;
                     }
                 })
-                html1 += x + ": " + temp + "<br>";
+                if(temp > 1)
+                {
+                    html1 += x + ": " + temp + "<br>";
+                    totalAlpha++;
+                }
+                
             })
 
             var listCouple1 = [];
@@ -97,7 +105,9 @@
                 j++;
             }
 
-            listCouple1.forEach(x => {
+            var uniqueSet = new Set(listCouple1);
+            var backToArray = uniqueSet;
+            backToArray.forEach(x => {
                 var temp = 0;
                 listCouple1.forEach(x2 => {
                     if (x.trim() == x2.trim()) {
@@ -106,12 +116,15 @@
                 })
                 if (Array.from(x.trim()).length == 2 && temp > 1) {
                     html2 += x + ": " + temp + "<br>";
+                    totalCouple++;
                 }
 
             })
 
             KetQua1.innerHTML = html1;
             KetQua2.innerHTML = html2;
+            total1.innerHTML = "Tổng số chữ cái xuất hiện: <strong>" + totalAlpha + "/26" + "</strong>";
+            total2.innerHTML = "Tổng số cặp trùng: <strong>" + totalCouple + "</strong>";
         }
     </script>
 </body>
