@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Bài 5</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="row" style="margin-top: 50px;margin-bottom: 25px;">
+            <div class="col-md-3">
+                <a name="" id="" class="btn btn-success" style="width: 100%;" href="/index.html" role="button">Bài 1</a>
+            </div>
+            <div class="col-md-2">
+                <a name="" id="" class="btn btn-info" style="width: 100%;" href="/caesar.html" role="button">Bài 2</a>
+            </div>
+            <div class="col-md-2">
+                <a name="" id="" class="btn btn-danger" style="width: 100%;" href="/maHoaThayTheDG.html" role="button">Bài 3</a>
+            </div>
+            <div class="col-md-2">
+                <a name="" id="" class="btn btn-warning" style="width: 100%;" href="/xuLyChuoi.html" role="button">Bài 4</a>
+            </div>
+            <div class="col-md-3">
+                <a name="" id="" class="btn btn-primary" style="width: 100%;" href="/caculator.html" role="button">Bài 5</a>
+            </div>
+        </div>
+        <div class="row">
+            
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <div style="text-align: center;">
+                    <h5>Tính thương số và số dư</h5>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                          <label for="number1">Số thứ 1</label>
+                          <input type="number" class="form-control" name="" id="number1" aria-describedby="helpId" placeholder="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="number2">Số thứ 2</label>
+                            <input type="number" class="form-control" name="" id="number2" aria-describedby="helpId" placeholder="">
+                          </div>
+                    </div>
+                </div>
+                <button type="button" style="width: 100%;" id="dongy" class="btn btn-success">Đồng ý</button>
+                <div style="text-align: center;">
+                    <h4>Kết quả</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="text-align: center;">
+                            <h6>Thương số</h6>
+                            <p id="total1"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div style="text-align: center;">
+                            <h6>Số dư</h6>
+                            <p id="total2"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        dongy.onclick= () =>{
+            total1.innerHTML = "";
+            total1.innerHTML = "";
+            var num1 = number1.value;
+            var num2 = number2.value;
+            total1.innerHTML = num1/num2;
+            total2.innerHTML = num1 % num2;
+        }
+    </script>
+</body>
+</html>

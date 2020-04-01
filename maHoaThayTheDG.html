@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Bài 1</title>
+    <title>Bài 3</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,13 +22,16 @@
                 <a name="" id="" class="btn btn-info" style="width: 100%;" href="/caesar.html" role="button">Bài 2</a>
             </div>
             <div class="col-md-2">
-                <a name="" id="" class="btn btn-danger" style="width: 100%;" href="/maHoaThayTheDG.html" role="button">Bài 3</a>
+                <a name="" id="" class="btn btn-danger" style="width: 100%;" href="/maHoaThayTheDG.html"
+                    role="button">Bài 3</a>
             </div>
             <div class="col-md-2">
-                <a name="" id="" class="btn btn-warning" style="width: 100%;" href="/xuLyChuoi.html" role="button">Bài 4</a>
+                <a name="" id="" class="btn btn-warning" style="width: 100%;" href="/xuLyChuoi.html" role="button">Bài
+                    4</a>
             </div>
             <div class="col-md-3">
-                <a name="" id="" class="btn btn-primary" style="width: 100%;" href="/caculator.html" role="button">Bài 5</a>
+                <a name="" id="" class="btn btn-primary" style="width: 100%;" href="/caculator.html" role="button">Bài
+                    5</a>
             </div>
         </div>
         <div class="row">
@@ -38,11 +41,11 @@
             </div>
             <div class="col-md-6">
                 <div style="text-align: center;">
-                    <h5>Bánh xe mã hóa</h5>
+                    <h5>Tính thương số và số dư</h5>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="/banhxe.PNG" width="100%" alt="">
+                        <img src="/LINE.PNG" width="100%" alt="">
                         <div class="form-group">
                             <label for="textChuoiKyTu">Chuỗi ký tự</label>
                             <input type="text" class="form-control" name="" id="textChuoiKyTu" aria-describedby="helpId"
@@ -85,16 +88,13 @@
             var chuoiResutlText = "";
             var chuoiResutlMahoa = "";
             var alphabet = "abcdefghijklmnopqstuvwxyz"
-            var maThayThe = "FGHIJKLMNOPQRSTUVWXYZABCDE"
+            var maThayThe = "SCJAXUFBQKTPRWEZHVLIGYDNMO"
             var arrayAlphabet = Array.from(alphabet.toLowerCase());
             var arrayMaThayThe = Array.from(maThayThe.toLowerCase());
             var textInput = Array.from(textChuoiKyTu.value.toLowerCase().split(' ').join(''));
-            for(var i = 0;i<textInput.length;i++)
-            {
-                for(var j = 0;j<arrayAlphabet.length;j++)
-                {
-                    if(textInput[i].trim() == arrayAlphabet[j].trim())
-                    {
+            for (var i = 0; i < textInput.length; i++) {
+                for (var j = 0; j < arrayAlphabet.length; j++) {
+                    if (textInput[i].trim() == arrayAlphabet[j].trim()) {
                         chuoiResutlMahoa += arrayMaThayThe[j].trim();
                     }
                 }
@@ -102,21 +102,18 @@
             textChuoiMaHoa.value = chuoiResutlMahoa.toUpperCase();
             console.log(chuoiResutlMahoa)
         }
-        dongy2.onclick =() =>{
+        dongy2.onclick = () => {
             var chuoiResutlText = "";
             var chuoiResutlMahoa = "";
             var alphabet = "abcdefghijklmnopqrstuvwxyz"
-            var maThayThe = "FGHIJKLMNOPQRSTUVWXYZABCDE"
+            var maThayThe = "SCJAXUFBQKTPRWEZHVLIGYDNMO"
             var arrayAlphabet = Array.from(alphabet.toLowerCase());
             var arrayMaThayThe = Array.from(maThayThe.toLowerCase());
             var textInput = Array.from(textChuoiMaHoa.value.toLowerCase().split(' ').join(''));
-            for(var i = 0;i<textInput.length;i++)
-            {
+            for (var i = 0; i < textInput.length; i++) {
                 console.log(textInput[i])
-                for(var j = 0;j<arrayMaThayThe.length;j++)
-                {
-                    if(textInput[i].trim() == arrayMaThayThe[j].trim())
-                    {
+                for (var j = 0; j < arrayMaThayThe.length; j++) {
+                    if (textInput[i].trim() == arrayMaThayThe[j].trim()) {
                         //console.log(arrayMaThayThe[j]+ "-" +arrayAlphabet[j])
                         chuoiResutlText += arrayAlphabet[j].trim();
                     }

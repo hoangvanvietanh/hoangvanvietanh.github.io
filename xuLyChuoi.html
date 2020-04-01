@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài 4</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row" style="margin-top: 50px;margin-bottom: 25px;">
+            <div class="col-md-3">
+                <a name="" id="" class="btn btn-success" style="width: 100%;" href="/index.html" role="button">Bài 1</a>
+            </div>
+            <div class="col-md-2">
+                <a name="" id="" class="btn btn-info" style="width: 100%;" href="/caesar.html" role="button">Bài 2</a>
+            </div>
+            <div class="col-md-2">
+                <a name="" id="" class="btn btn-danger" style="width: 100%;" href="/maHoaThayTheDG.html" role="button">Bài 3</a>
+            </div>
+            <div class="col-md-2">
+                <a name="" id="" class="btn btn-warning" style="width: 100%;" href="/xuLyChuoi.html" role="button">Bài 4</a>
+            </div>
+            <div class="col-md-3">
+                <a name="" id="" class="btn btn-primary" style="width: 100%;" href="/caculator.html" role="button">Bài 5</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6">
+                <div style="text-align: center;">
+                    <h5>Đếm chữ</h5>
+                </div>
+                <div class="form-group">
+                    <label for=""></label>
+                    <textarea class="form-control" name="" id="textArea" rows="3"></textarea>
+                </div>
+                <button type="button" style="width: 100%;" id="dongy" class="btn btn-success">Đồng ý</button>
+                <div style="text-align: center;">
+                    <h4>Kết quả</h4>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div style="text-align: center;">
+                            <h6>Đếm chữ cái</h6>
+                            <p id="total1"></p>
+                            <p id="KetQua1"></p>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <div style="text-align: center;">
+                            <h6>Các cặp trùng</h6>
+                            <p id="total2"></p>
+                            <p  id="KetQua2"></p>
+                        </div>
+                        
+                    </div>
+                </div>
+                
+                
+            </div>
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        dongy.onclick = () => {
+            var html1 = "";
+            var html2 = "";
+            var text1 = textArea.value;
+            var arrayText1 = Array.from(text1);
+            var listAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+            var totalAlpha = 0;
+            var totalCouple = 0;
+            listAlpha.forEach(x => {
+                var temp = 0;
+                arrayText1.forEach(text => {
+                    if (x.trim() == text.trim()) {
+                        temp++;
+                    }
+                })
+                if(temp > 1)
+                {
+                    html1 += x + ": " + temp + "<br>";
+                    totalAlpha++;
+                }
+                
+            })
+
+            var listCouple1 = [];
+            var j = 1;
+            for (var i = 0; i < arrayText1.length; i++) {
+                var couple1 = arrayText1[i] + arrayText1[j]
+                listCouple1.push(couple1);
+                j++;
+            }
+
+            var uniqueSet = new Set(listCouple1);
+            var backToArray = uniqueSet;
+            backToArray.forEach(x => {
+                var temp = 0;
+                listCouple1.forEach(x2 => {
+                    if (x.trim() == x2.trim()) {
+                        temp++;
+                    }
+                })
+                if (Array.from(x.trim()).length == 2 && temp > 1) {
+                    html2 += x + ": " + temp + "<br>";
+                    totalCouple++;
+                }
+
+            })
+
+            KetQua1.innerHTML = html1;
+            KetQua2.innerHTML = html2;
+            total1.innerHTML = "Tổng số chữ cái xuất hiện: <strong>" + totalAlpha + "/26" + "</strong>";
+            total2.innerHTML = "Tổng số cặp trùng: <strong>" + totalCouple + "</strong>";
+        }
+    </script>
+</body>
+
+</html>
