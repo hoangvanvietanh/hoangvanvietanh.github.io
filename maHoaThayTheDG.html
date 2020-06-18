@@ -91,7 +91,7 @@
             var maThayThe = "SCJAXUFBQKTPRWEZHVLIGYDNMO"
             var arrayAlphabet = Array.from(alphabet.toLowerCase());
             var arrayMaThayThe = Array.from(maThayThe.toLowerCase());
-            var textInput = Array.from(textChuoiKyTu.value.toLowerCase().split(' ').join(''));
+            var textInput = Array.from(textChuoiKyTu.value.toLowerCase());
             for (var i = 0; i < textInput.length; i++) {
                 for (var j = 0; j < arrayAlphabet.length; j++) {
                     if (textInput[i].trim() == arrayAlphabet[j].trim()) {
@@ -109,7 +109,7 @@
             var maThayThe = "SCJAXUFBQKTPRWEZHVLIGYDNMO"
             var arrayAlphabet = Array.from(alphabet.toLowerCase());
             var arrayMaThayThe = Array.from(maThayThe.toLowerCase());
-            var textInput = Array.from(textChuoiMaHoa.value.toLowerCase().split(' ').join(''));
+            var textInput = Array.from(textChuoiMaHoa.value.toLowerCase());
             for (var i = 0; i < textInput.length; i++) {
                 console.log(textInput[i])
                 for (var j = 0; j < arrayMaThayThe.length; j++) {
