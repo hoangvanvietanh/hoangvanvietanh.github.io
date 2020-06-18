@@ -84,11 +84,13 @@
         dongy.onclick = () => {
             var chuoiResutlText = "";
             var chuoiResutlMahoa = "";
-            var alphabet = "abcdefghijklmnopqstuvwxyz"
+            var alphabet = "abcdefghijklmnopqrstuvwxyz"
             var maThayThe = "FGHIJKLMNOPQRSTUVWXYZABCDE"
             var arrayAlphabet = Array.from(alphabet.toLowerCase());
             var arrayMaThayThe = Array.from(maThayThe.toLowerCase());
             var textInput = Array.from(textChuoiKyTu.value.toLowerCase().split(' ').join(''));
+            console.log(arrayAlphabet)
+            console.log(textInput)
             for(var i = 0;i<textInput.length;i++)
             {
                 for(var j = 0;j<arrayAlphabet.length;j++)
@@ -110,6 +112,7 @@
             var arrayAlphabet = Array.from(alphabet.toLowerCase());
             var arrayMaThayThe = Array.from(maThayThe.toLowerCase());
             var textInput = Array.from(textChuoiMaHoa.value.toLowerCase().split(' ').join(''));
+            console.log(textInput)
             for(var i = 0;i<textInput.length;i++)
             {
                 console.log(textInput[i])
