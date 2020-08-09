@@ -52,6 +52,7 @@
                     <div class="col-md-6">
                         <div style="text-align: center;">
                             <h6>Đếm chữ cái</h6>
+                            <p id="word"></p>
                             <p id="total1"></p>
                             <p id="KetQua1"></p>
                         </div>
@@ -93,11 +94,12 @@
         dongy.onclick = () => {
             var html1 = "";
             var html2 = "";
-            var text1 = textArea.value;
+            var text1 = textArea.value.replace(/\s/g, '');;
             var arrayText1 = Array.from(text1);
             var listAlpha = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
             var totalAlpha = 0;
             var totalCouple = 0;
+            word.innerHTML = "Tổng số chữ cái đơn: <strong>" +  text1.length + "</strong>";
             listAlpha.forEach(x => {
                 var temp = 0;
                 arrayText1.forEach(text => {
