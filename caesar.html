@@ -102,6 +102,52 @@
         </div>
     </div>
     <section id="resultBruteforce"></section>
+
+     <!-- Button trigger modal -->
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modelId">
+        So sánh chuỗi
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                      <div class="modal-header">
+                              <h5 class="modal-title">So sánh chuỗi</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                          </div>
+                  <div class="modal-body">
+                      <div class="container-fluid">
+                          <div class="form-group">
+                            <label for="textCompare1">Đoạn văn bản 1</label>
+                            <input type="text"
+                              class="form-control" name="" id="textCompare1" aria-describedby="helpId" placeholder="">
+                          </div>
+                          <div class="form-group">
+                              <label for="textCompare2">Đoạn văn bản 2</label>
+                              <input type="text"
+                                class="form-control" name="" id="textCompare2" aria-describedby="helpId" placeholder="">
+                            </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                      <button type="button" onclick="compareText()" class="btn btn-primary">So sánh</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <script>
+          $('#exampleModal').on('show.bs.modal', event => {
+              var button = $(event.relatedTarget);
+              var modal = $(this);
+              // Use above variables to manipulate the DOM
+              
+          });
+      </script>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -113,6 +159,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+        <script>
+            function compareText(){
+                if(textCompare1.value.replace(/\s/g, '').trim()==textCompare2.value.replace(/\s/g, '').trim())
+                {
+                    alert("Chuỗi giống nhau");
+                }
+                else{
+                    alert("Chuỗi khác nhau");
+                }
+                
+            }
+        </script>
     <script>
         var shift;
         function encrypt(text, shift) {
